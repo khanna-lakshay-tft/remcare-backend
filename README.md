@@ -53,8 +53,7 @@ This is a full-stack application built using Laravel for the backend and React f
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/patient-management.git
-cd patient-management
+git clone https://github.com/yourusername/remcare-backend.git
 ```
 ## Install Backend Dependencies
 
@@ -169,6 +168,8 @@ php artisan serve
 ```
 
 ## API Endpoints
+
+Postman collection Link: https://github.com/khanna-lakshay-tft/remcare-backend/tree/main/postman-collection
 
 ### Authentication
 1. POST /api/login : Login API

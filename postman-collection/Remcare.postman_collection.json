@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "ffb5a5a3-1d68-4e5e-a87b-fed301dcc745",
+		"name": "Remcare",
+		"description": "This is the backend api's collection that contains API's related to patient management system.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32961018",
+		"_collection_link": "https://cloudy-desert-155388.postman.co/workspace/e6297be1-824d-4f26-b295-446a36dbd161/collection/32961018-ffb5a5a3-1d68-4e5e-a87b-fed301dcc745?action=share&source=collection_link&creator=32961018"
+	},
+	"item": [
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "lakshay@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "lakshay",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "lakshay@test6.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pass1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "\n### Register User\n\nThis endpoint allows the client to register a new user.\n\n**Request Body**\n- `name` (text): The name of the user.\n- `email` (text): The email address of the user.\n- `password` (text): The password for the user account.\n\n**Response**\n- Status: 422\n- Content-Type: application/json\n- Body: \n  ```json\n  {\n      \"error\": {\n          \"email\": [\"\"]\n      }\n  }\n  ```\n\nThis response indicates that there was an error with the email field in the request body.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDE4OTVlMzc4NGEzMTViNzllZjNjMDViODIwMWZhN2RkZTE0YzU4NTM2YzBkNDU0OTcyZTA1YjQxZTVjZDQ2ODRhM2Y3Y2E3MjQ2Yzc5N2MiLCJpYXQiOjE3MTg5NDU2MjcuNzM0NjYzLCJuYmYiOjE3MTg5NDU2MjcuNzM0NjYzLCJleHAiOjE3NTA0ODE2MjcuNzI4NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.evR61CMtMQDd5-PFLoPKpbZ_kg3yPiCrpmPbC6ZkzyLq2GeQXZyTbU30v76HJyP_IZIuwBrv7fqI6s4bzlzXBCoRwrXOlz89aqA5o4jNJYInNScfUUqhq-cIWogdRyuoT-3dF7wFogTrWPYMF2eOAaGqoKD7iNeSdrW-9LbrRI-1z80h6wV8p9u95XFnfj7EVJ0J17Tu61wRobD-kgMNGC7Zi6qdz-T94kGV0GoTC3i4twXtBsO9jDn1pe08bQg2SnZ1NWpzTkQJ5ULv0RLNyctG28DJCtFX_Ggs_PPVM16NOCLlUVe2xz12AJBNc7j_AhSHbvXC2YX34dbhfGWDQyQzIauSD15OzdgjWZAcGgaGmqJG3R6d5z-zes5Tz59cjUNMZMO1p6MOnNiBVEsk0cOazestBsTMl5bkJXwqsb56q9Z2BGyHwKmjhaky_70q4CwmbsrKsaXIEiFRX17PxYEn9xisX21K4PLkcL_5T_dJvGDST2vlq8N59aBcf4vRtQWPWypcfMCH-aJ3evpUIrvKo-ouns9h_VptNQnaCZ6nveiH3PS1ANnWlryoPWqQFXOFBKWzADo4npq_OcF3vG6Ej4WURv0s1onq6M3ykBhKjwzHbFGt_Klv4uqe2RuOuE5IL742oMRPQwOYkzBSm5K-yxNZ7uLKdDjkyOz_g-E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all patients",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmFjNWQ4NGI5NTY4NWFlOGU5NzlhYTQyNjg4MTVmMjExN2NkNzQ3M2U3ZjNmODE1NWJlY2ZjOWU2N2M2MTRjZDRkNmM1NWZhYjc3ZTdmNzEiLCJpYXQiOjE3MTg5ODYzNTYuNDM5MzkyLCJuYmYiOjE3MTg5ODYzNTYuNDM5MzkzLCJleHAiOjE3NTA1MjIzNTYuNDMzMTIzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.V59fTGQH-7rijMvIn7TauulwL101lOQ8IozNJJVY4-Kgy0JnxGKBbkoGC5zHVtdHsmGKEiSScrvu4bj_STSQRnNSAvZCtiOFzC7jCEyGfrtM4_oV-yL-Z1bv3XxtyqiKeqkfl0CtpnTf4cQ7ZsK-w0AbJv7eXpext81x13T_cC158e5OVrpyVlvrmcP09ZadY3pROxZdm6I21NcmkYkHFnL5UVcTw24BFfbVobhUv3zX6VRBLlBuxcNdYtNutd_fMWHTNT7o1ncZiCs86ahJ8lX81EJ2Z1Dr6g92A7tVaZ158ZKc7D18lPwx1KTDqY8g8wlSn4J3zYa8DIn0S_2M-tgH-UEfm35f9U34_hNyfJgQo-AzTWa2NanD6zDqz5V1kxlLw7Pi41TvygR0JdbeH7swKmAZ2me_nLzk9BO-ZHKKXc4B87ZnM8Leh5a0dSrgMBXGwt7CC1gLNMuWzvdOQaO9Z3Lvgj6Bwx4Bg5uWrgJJR5YdXp-g6Dj2Mj69gI8GaO5OpCE41vmktkQKRhNP_pcJzMhFuHDxyuXn1zbeggEYMUlVBihUz-8sXoMw6bCxKDMzYgWivpdJUMn2II5FffenxksEfwn8hVMIvUtv6pEYRroT7L-SR0b9b-QbDtZwVwbuvB0jeKWhl-hdnsH3Q-6ldYMJZflqD5zqbuP-ZE0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patient",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Patient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWMwOWE4YjgzY2M4ZGM3ZjlhMjhhMzI1MzA3YmYxNWI2YjFmY2RmZTJmNzk0NjQzODA4ZTAwODJhNTNkODQ0ZWQ0ZWU1MTZiZjA5NDA2YTMiLCJpYXQiOjE3MTg5NDU2NjEuOTIwNzAyLCJuYmYiOjE3MTg5NDU2NjEuOTIwNzAyLCJleHAiOjE3NTA0ODE2NjEuOTE3MTI4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QGA6zjDWxHa0pvOrBdqVkKogPJmmIdtE4ZF2BfIhK6WryAiA-pv-R182WayifOQvukvn60-DGQ3ZZY0kYugaY7PiEQhUNF5DmLNTxoyISqbu16cfPbJ1ReS8vedzQ8OOnTt8Jqewo1L5PmWXXL5RydaDo-377NzneqJRT1VckOOPWnauwljDn0kX_QUBOOmcb_FvdBjfZ8oH_mBamHDQthnjUuUCfixj4m92TI-ejwjBNNEzsnEVAFyOAeApv8yc_HrdGqcXEToVQ2dL7PjdxyhJNf8aBopjdZ5cprpdbXWvtj6KZwVZyQSCZr_wjCGhlqodkwaIrNb-uHgKE-TCabNORA52urGXJ2WvDeLkZRc5r36GxWPQeBdQPHD6Hqirq4EIFOcC9VoCAdkXFrnF_K5mjl55qA2GKNh2iuKLakOStlkpP5y7wi_3g_O9aTye0gjSye8MBbCSkCfv50ykQjAFbxXL-UwQk4Hnqj4vrZrpMjBOinACGw0LqaX-wTK1lzIeXN-wAPnJLYJAV8GA0cKN7W-yAimjBpVXhaCEH-pptuqkv2Xrpssx-FEqxgNc1HwFFy6726nCFgKCXGzyh_fErCWFeumAhRIZHUJCCIvSZr272FsugHH4rn0Jo22PuNpOuMOxL9jiEGFuJIk0UM2Ge2oE7b-4ukaduHOeC9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"test\",\n    \"last_name\": \"khanna\",\n    \"email\": \"test@patient.com\",\n    \"dob\": \"2003-05-05\",\n    \"risk_category\": \"D\",\n    \"appointment_time\": \"2024-07-19 03:09:32\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patient",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific patient detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWMwOWE4YjgzY2M4ZGM3ZjlhMjhhMzI1MzA3YmYxNWI2YjFmY2RmZTJmNzk0NjQzODA4ZTAwODJhNTNkODQ0ZWQ0ZWU1MTZiZjA5NDA2YTMiLCJpYXQiOjE3MTg5NDU2NjEuOTIwNzAyLCJuYmYiOjE3MTg5NDU2NjEuOTIwNzAyLCJleHAiOjE3NTA0ODE2NjEuOTE3MTI4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QGA6zjDWxHa0pvOrBdqVkKogPJmmIdtE4ZF2BfIhK6WryAiA-pv-R182WayifOQvukvn60-DGQ3ZZY0kYugaY7PiEQhUNF5DmLNTxoyISqbu16cfPbJ1ReS8vedzQ8OOnTt8Jqewo1L5PmWXXL5RydaDo-377NzneqJRT1VckOOPWnauwljDn0kX_QUBOOmcb_FvdBjfZ8oH_mBamHDQthnjUuUCfixj4m92TI-ejwjBNNEzsnEVAFyOAeApv8yc_HrdGqcXEToVQ2dL7PjdxyhJNf8aBopjdZ5cprpdbXWvtj6KZwVZyQSCZr_wjCGhlqodkwaIrNb-uHgKE-TCabNORA52urGXJ2WvDeLkZRc5r36GxWPQeBdQPHD6Hqirq4EIFOcC9VoCAdkXFrnF_K5mjl55qA2GKNh2iuKLakOStlkpP5y7wi_3g_O9aTye0gjSye8MBbCSkCfv50ykQjAFbxXL-UwQk4Hnqj4vrZrpMjBOinACGw0LqaX-wTK1lzIeXN-wAPnJLYJAV8GA0cKN7W-yAimjBpVXhaCEH-pptuqkv2Xrpssx-FEqxgNc1HwFFy6726nCFgKCXGzyh_fErCWFeumAhRIZHUJCCIvSZr272FsugHH4rn0Jo22PuNpOuMOxL9jiEGFuJIk0UM2Ge2oE7b-4ukaduHOeC9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patient/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Patient data for Bar chart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZWQ3MTZhNzg0ZGNlYTM4ZmM1ZTRkMDFiOGMyYjViZGE0NWZjYWNlOTM5Y2YwYWQ3NzYzYTM1NjhiNDQwOTIxNGZiMWVhYTNkZGY2NDU5YTUiLCJpYXQiOjE3MTg5NDcxNjAuODgwNjg4LCJuYmYiOjE3MTg5NDcxNjAuODgwNjg5LCJleHAiOjE3NTA0ODMxNjAuODcxNTI2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.LHU7QjWrCHkZJj5vwplp8fHR4O6I3MZZRF_f_naZMyEXDWyAdYS2wPr7SMNeTRWm6kuOxMAAjxG_54hOsmdDedan-OVQmdK_kmToVWcvvzILlxGoo631JH90jVZ5QZn_9d45X5Pc3sRYClt9Bnm0cB1vIChy2y3gJt7ML4_keH7-AzZWUjXADORDNaOusUTsqGG9qgHsFFTWmtNzUGisDkxxarWxjMjbZDmEUKXk3wk-lXTLPcH-9ld_C-7th89vkpNi4fZUGgd32bjDMjXlxGL0LpJTazSDMeY3SJHfkMV-vaWblxz827j2bYWPq-B66ke7KYWFTnQdjonlrZWNSs3INdGmj1_Al3dhcBDm_kLc5DLI79DNXklUXVs_qm1nIWLjyRRtIChgqsBEEfPVWMkEM962KtC-1HPg8HfzbGaclu6trlhj0EHrJ3JiqhSQACkun1Y68f5Hse527or0_9X3l8XgeHrH4lqpznjXxOZMtaDkLq1w8fjJx3rpNtUKS7Hy_s3s0HnOoY4l4jC5_mqWEq3v84I8bD2T4peqz_m8hIVIKIOJlsnokBItQW8-ALWugfY_rn--escZNHBwyptds3y_Z7tPDtfibxVHxJR9Uv6d-dWlDxtpMEY3vibZCIAUVnvwffk61ZQraKtKW-0N8H7VbjoxVFgQQlimbEo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patients-bar-data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients-bar-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Patient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWMwOWE4YjgzY2M4ZGM3ZjlhMjhhMzI1MzA3YmYxNWI2YjFmY2RmZTJmNzk0NjQzODA4ZTAwODJhNTNkODQ0ZWQ0ZWU1MTZiZjA5NDA2YTMiLCJpYXQiOjE3MTg5NDU2NjEuOTIwNzAyLCJuYmYiOjE3MTg5NDU2NjEuOTIwNzAyLCJleHAiOjE3NTA0ODE2NjEuOTE3MTI4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QGA6zjDWxHa0pvOrBdqVkKogPJmmIdtE4ZF2BfIhK6WryAiA-pv-R182WayifOQvukvn60-DGQ3ZZY0kYugaY7PiEQhUNF5DmLNTxoyISqbu16cfPbJ1ReS8vedzQ8OOnTt8Jqewo1L5PmWXXL5RydaDo-377NzneqJRT1VckOOPWnauwljDn0kX_QUBOOmcb_FvdBjfZ8oH_mBamHDQthnjUuUCfixj4m92TI-ejwjBNNEzsnEVAFyOAeApv8yc_HrdGqcXEToVQ2dL7PjdxyhJNf8aBopjdZ5cprpdbXWvtj6KZwVZyQSCZr_wjCGhlqodkwaIrNb-uHgKE-TCabNORA52urGXJ2WvDeLkZRc5r36GxWPQeBdQPHD6Hqirq4EIFOcC9VoCAdkXFrnF_K5mjl55qA2GKNh2iuKLakOStlkpP5y7wi_3g_O9aTye0gjSye8MBbCSkCfv50ykQjAFbxXL-UwQk4Hnqj4vrZrpMjBOinACGw0LqaX-wTK1lzIeXN-wAPnJLYJAV8GA0cKN7W-yAimjBpVXhaCEH-pptuqkv2Xrpssx-FEqxgNc1HwFFy6726nCFgKCXGzyh_fErCWFeumAhRIZHUJCCIvSZr272FsugHH4rn0Jo22PuNpOuMOxL9jiEGFuJIk0UM2Ge2oE7b-4ukaduHOeC9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"test\",\n    \"last_name\": \"test\",\n    \"email\": \"test@patienttest.com\",\n    \"dob\": \"2003-05-05\",\n    \"risk_category\": \"D\",\n    \"appointment_time\": \"2024-07-19 03:09:32\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patient/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete patient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWMwOWE4YjgzY2M4ZGM3ZjlhMjhhMzI1MzA3YmYxNWI2YjFmY2RmZTJmNzk0NjQzODA4ZTAwODJhNTNkODQ0ZWQ0ZWU1MTZiZjA5NDA2YTMiLCJpYXQiOjE3MTg5NDU2NjEuOTIwNzAyLCJuYmYiOjE3MTg5NDU2NjEuOTIwNzAyLCJleHAiOjE3NTA0ODE2NjEuOTE3MTI4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QGA6zjDWxHa0pvOrBdqVkKogPJmmIdtE4ZF2BfIhK6WryAiA-pv-R182WayifOQvukvn60-DGQ3ZZY0kYugaY7PiEQhUNF5DmLNTxoyISqbu16cfPbJ1ReS8vedzQ8OOnTt8Jqewo1L5PmWXXL5RydaDo-377NzneqJRT1VckOOPWnauwljDn0kX_QUBOOmcb_FvdBjfZ8oH_mBamHDQthnjUuUCfixj4m92TI-ejwjBNNEzsnEVAFyOAeApv8yc_HrdGqcXEToVQ2dL7PjdxyhJNf8aBopjdZ5cprpdbXWvtj6KZwVZyQSCZr_wjCGhlqodkwaIrNb-uHgKE-TCabNORA52urGXJ2WvDeLkZRc5r36GxWPQeBdQPHD6Hqirq4EIFOcC9VoCAdkXFrnF_K5mjl55qA2GKNh2iuKLakOStlkpP5y7wi_3g_O9aTye0gjSye8MBbCSkCfv50ykQjAFbxXL-UwQk4Hnqj4vrZrpMjBOinACGw0LqaX-wTK1lzIeXN-wAPnJLYJAV8GA0cKN7W-yAimjBpVXhaCEH-pptuqkv2Xrpssx-FEqxgNc1HwFFy6726nCFgKCXGzyh_fErCWFeumAhRIZHUJCCIvSZr272FsugHH4rn0Jo22PuNpOuMOxL9jiEGFuJIk0UM2Ge2oE7b-4ukaduHOeC9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/patient/200",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patient",
+						"200"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
