@@ -169,7 +169,13 @@ php artisan serve
 
 ## API Endpoints
 
-Postman collection Link: https://github.com/khanna-lakshay-tft/remcare-backend/tree/main/postman-collection
+Postman collection Link: 
+
+Download postman collection :-
+https://raw.githubusercontent.com/khanna-lakshay-tft/remcare-backend/main/postman-collection/Remcare.postman_collection.json
+
+Link to postman collection file :-
+https://github.com/khanna-lakshay-tft/remcare-backend/tree/main/postman-collection
 
 ### Authentication
 1. POST /api/login : Login API
