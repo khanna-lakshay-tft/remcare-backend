@@ -23,7 +23,7 @@ class AuthenticationController extends Controller
         try {
             // Define validation rules
             $validator = Validator::make($request->all(), [
-                'name' => 'required|string|max:255',
+                'name' => 'required|string|min:1|max:255',
                 'email' => 'required|email|unique:users,email',
                 'password' => 'required|string|min:6',
             ]);

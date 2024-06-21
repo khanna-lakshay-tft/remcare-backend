@@ -172,22 +172,22 @@ class PatientController extends Controller
                     [
                         'label' => 'Risk Category A',
                         'data' => [],
-                        'backgroundColor' => '#FF6384',
+                        'backgroundColor' => '#519DE9',
                     ],
                     [
                         'label' => 'Risk Category B',
                         'data' => [],
-                        'backgroundColor' => '#36A2EB',
+                        'backgroundColor' => '#7CC674',
                     ],
                     [
                         'label' => 'Risk Category C',
                         'data' => [],
-                        'backgroundColor' => '#FFCE56',
+                        'backgroundColor' => '#73C5C5',
                     ],
                     [
                         'label' => 'Risk Category D',
                         'data' => [],
-                        'backgroundColor' => '#4BC0C0',
+                        'backgroundColor' => '#F6D173',
                     ],
                 ],
             ];
