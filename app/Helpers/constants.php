@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'INTERNAL_SERVICE_ERROR' => 500,
+    'VALIDATION_ERROR' => 422,
+    'UNAUTHORIZED_ERROR' => 401,
+    'FORBIDDEN_ERROR' => 403,
+    'NOT_FOUND_ERROR' => 404,
+];
